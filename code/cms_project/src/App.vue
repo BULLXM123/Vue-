@@ -44,5 +44,10 @@ export default {
 </script>
 
 <style>
-
+  .mint-header{
+  position: relative;
+}
+.mt-tabbar{
+  top:40px
+}
 </style>
