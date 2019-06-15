@@ -6,6 +6,8 @@ import router from './router'
 import Axios from 'axios'
 // 配置mintui
 import MintUI from 'mint-ui'
+import MyUl from '@/components/Common/MyUl'
+import MyLi from '@/components/Common/MyLi'
 // 引入css
 import 'mint-ui/lib/style.css'
 import './assets/css/global.css'
@@ -14,6 +16,8 @@ import './assets/css/global.css'
 Axios.defaults.baseURL = 'https://www.doutula.com/api/'
 
 Vue.prototype.$axios = Axios
+Vue.component(MyUl.name,MyUl)
+Vue.component(MyLi.name,MyLi)
 Vue.use(MintUI)
 Vue.config.productionTip = false
 /* eslint-disable no-new */
