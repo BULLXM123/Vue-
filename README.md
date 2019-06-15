@@ -31,7 +31,7 @@ __1.```useEslint: false```__ in __`config/index.js`__
         width:"320px"
       }  ```__ in __`Home.vue`__ **：定义轮播图宽度**  
       __2.自定义插件MyLi.vue MyUl.vue__  
-      __3.使用自定义插件：__
+      __3.使用自定义插件(Home.vue)：__
       
            <my-ul>   
            
