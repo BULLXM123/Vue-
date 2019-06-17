@@ -48,6 +48,31 @@ __1.```useEslint: false```__ in __`config/index.js`__
              </my-li>  
              
            </my-ul>   
- __说明：v-for使用对象若是插件，则需要绑定key值(:key="xxx")__
+ __说明：v-for使用对象若是插件，则需要绑定key值(:key="xxx")__   
+  ### 第四次提交说明：   
+  __1.使用[esaymock](https://www.easy-mock.com/)实现自定义api（想拿啥数据就拿啥数据！happy！）__  
+  __2.九宫格路由跳转```<router-link>``` in `Home.vue`__（仅实现新闻资讯）  
+  __3.新闻资讯`NewsList.vue`中的时间应用`moment插件`使用过滤器__  
+    
+  
+           main.js:
+            import Moment from 'moment';
+            
+           //{{ 'xxx' | convertTime('YYYY-MM-DD') }}
+           
+           //{{ 'xxx' | convertTime('YYYY年MM月DD日') }}
+         
+          Vue.filter('convertTime',function(data,formatStr) {
+          
+          return Moment(data).format(formatStr);
+          
+           })
+           
+          ——————————————————————————————————————————————————————————————————
+          
+          NewsList.vue:
+          <p>发表时间：{{news.add_time | convertTime('YYYY-MM-DD')}}</p>
+  
+ __4.封装顶部导航栏NavBar,却无法显示__ 随缘大法好
 
   
