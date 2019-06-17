@@ -2,7 +2,7 @@
   <div>
     <mt-header fixed title="管理系统"></mt-header>
     <router-view/>
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" fixed> 
   <mt-tab-item id="home">
     <img slot="icon" src="./assets/img/index.png">
     首页

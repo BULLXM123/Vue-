@@ -10,10 +10,10 @@
         <div class="grid">
           <my-ul>
             <my-li v-for="(grid,index) in grids" :key="index">
-              <a href="">
+              <router-link :to="grid.router">
               <span :class="grid.className"></span>
               <span>{{grid.title}}</span>
-              </a>
+              </router-link>
             </my-li>
           </my-ul>
         
@@ -31,25 +31,44 @@ export default {
         width:"320px"
       },
       grids:[
-        { className:'news',title:'新闻资讯'},
-        { className:'sharing',title:'图文分享'},
-        { className:'shopping',title:'商品展示'},
-        { className:'message',title:'留言反馈'},
-        { className:'search',title:'搜索资讯'},
-        { className:'call',title:'联系我们'}
+        { className:'news',title:'新闻资讯',router:{
+          name:'news.list'
+        }},
+        { className:'sharing',title:'图文分享',router:{
+          name:'news.list'
+        }},
+        { className:'shopping',title:'商品展示',router:{
+          name:'news.list'
+        }},
+        { className:'message',title:'留言反馈',router:{
+          name:'news.list'
+        }},
+        { className:'search',title:'搜索资讯',router:{
+          name:'news.list'
+        }},
+        { className:'call',title:'联系我们',router:{
+          name:'news.list'
+        }}
         ]
     }
   }
   ,
+  // created() {
+  //     this.$axios.get('search?keyword=hehe')
+  //     .then(res=>{
+  //         this.imgs = res.data.data.list;  //{"status":1,"data":{"list":[{"out_id":1945830,"image_url":"http:\/\/ww2.sinaimg.cn\/large\/6af89bc8gw1f8r4i57ay1j204h05iglf.jpg"},{"out_id":8660088,"image_url":"http:\/\/ww2.sinaimg.cn\/large\/9150e4e5gy1g0r6wbbkraj204h05i0sk.jpg"},{"out_id":3747957,"image_url":"http:\/\/ww4.sinaimg.cn\/large\/6af89bc8gw1f8nu3a2f1wj2085089t8w.jpg"},{"out_id":3905227,"image_url":"http:\/\/ww3.sinaimg.cn\/large\/6af89bc8gw1f8rfwzx41sj20db0dsaak.jpg"},{"out_id":5107228,"image_url":"http:\/\/ww4.sinaimg.cn\/large\/6af89bc8gw1f8nrgfjlyuj20jg0j7758.jpg"}],"more":0}}
+  //         console.log(res.data.data.list); //被坑到了 要写两个.data 一开始只写了一个.data!!!
+  //     })
+  //     .catch(err=> console.log('轮播图获取异常', err));
+  // }
   created() {
-      this.$axios.get('search?keyword=hehe')
+      this.$axios.get('/example')
       .then(res=>{
-          this.imgs = res.data.data.list;  //{"status":1,"data":{"list":[{"out_id":1945830,"image_url":"http:\/\/ww2.sinaimg.cn\/large\/6af89bc8gw1f8r4i57ay1j204h05iglf.jpg"},{"out_id":8660088,"image_url":"http:\/\/ww2.sinaimg.cn\/large\/9150e4e5gy1g0r6wbbkraj204h05i0sk.jpg"},{"out_id":3747957,"image_url":"http:\/\/ww4.sinaimg.cn\/large\/6af89bc8gw1f8nu3a2f1wj2085089t8w.jpg"},{"out_id":3905227,"image_url":"http:\/\/ww3.sinaimg.cn\/large\/6af89bc8gw1f8rfwzx41sj20db0dsaak.jpg"},{"out_id":5107228,"image_url":"http:\/\/ww4.sinaimg.cn\/large\/6af89bc8gw1f8nrgfjlyuj20jg0j7758.jpg"}],"more":0}}
+          this.imgs = res.data.data.list; 
           console.log(res.data.data.list); //被坑到了 要写两个.data 一开始只写了一个.data!!!
       })
       .catch(err=> console.log('轮播图获取异常', err));
   }
-
 }
 </script>
 <style scoped>

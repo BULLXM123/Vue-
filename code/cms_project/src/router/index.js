@@ -4,10 +4,18 @@ import Home from '@/components/Home/Home'
 import Member from '@/components/Member/Member'
 import Search from '@/components/Search/Search'
 import Shopcart from '@/components/Shopcart/Shopcart'
+import NewsList from '@/components/News/NewsList'
 Vue.use(Router)
 /* eslint-disable no-new */
 export default new Router({
   routes: [
+    {
+      //重定向
+      path:'/',
+      //redirect:'/home',
+      redirect:{  name:'home'}
+
+    },
     {
       path: '/home',
       name: 'home',
@@ -27,6 +35,12 @@ export default new Router({
       path: '/shopcart',
       name: 'shopcart',
       component: Shopcart
+    },
+    //新闻列表
+    {
+      path: '/news/list',
+      name: 'news.list',
+      component: NewsList
     }
   ]
 })
