@@ -1,6 +1,10 @@
 <template>
     <div class="tmp1">
         <nav-bar title="新闻列表" />
+         <!-- <div class="cms_s_header">
+            <h1 >&nbsp<</h1>
+            <h1 class="page_title">新闻列表</h1>
+        </div> -->
         <div class="demo">
             <ul>
                 <li v-for="news in newsList" :key="news.id">
@@ -95,18 +99,5 @@ ul{
     transform: scaleY(.5);
     border-bottom: 1px solid #c8c7cc;
 }
-.cms_s_header {
-        height: 40px;
-        background-color: #f7f7f7;
-    }
-    .page_title{
-        margin-left: 25%;
-    }
-    h1,h2 {
-        display:inline-block;
-        height:40px;
-        line-height: 40px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
+
 </style>
