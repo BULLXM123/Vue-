@@ -48,6 +48,36 @@ __1.```useEslint: false```__ in __`config/index.js`__
              </my-li>  
              
            </my-ul>   
- __说明：v-for使用对象若是插件，则需要绑定key值(:key="xxx")__
+ __说明：v-for使用对象若是插件，则需要绑定key值(:key="xxx")__  
+
+  ### 第四&五次提交说明：  
+  __1.使用[esaymock](https://www.easy-mock.com)提供假数据__ 再也不用担心莫得数据啦!  
+
+  __2.自定义插件NavBar.vue__  
+  
+                      props['title'] 然后{{title}}绑定到位置
+
+                        this.$router.go(-1)  返回
+
+
+
+
+  __3.重定向路由（一进/就跳转到/home）__  `router/index.js`  
+
+  __4.定义moment全局日期过滤器(moment模块)__ `main.js`  
+
+  __5.NewsList.vue__ 新闻列表页面  
+
+  __6.App.vue中__  
+                      setTimeout( () => {
+                        this.$router.push({
+                         name: this.selected
+                           })
+                             })  
+                  
+                    
+                  setTimeout作用：等Vue渲染数据完成后才执行  
+                  
+
 
   
