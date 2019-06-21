@@ -78,6 +78,37 @@ __1.```useEslint: false```__ in __`config/index.js`__
                     
                   setTimeout作用：等Vue渲染数据完成后才执行  
                   
+  
+  
+  ### 第六次提交说明：  
+  __1.新增新闻详情页面 NewsDetail.vue__  
+  * NewsList.vue中 `<router-link>` 绑定，使用带参数`(id)`跳转  
+  
+            <router-link :to="{name:'news.detail',query:{id:news.id}}">……</router-link>  
+            
+            
+  * 配置路由规则  
+  
+            {
+              path: '/news/detail',
+              name: 'news.detail',
+              component: NewsDatail
+            }  
+              
+              
+   * created中请求数据
+     
+             created() {
+              let id = this.$route.query.id;
+              this.$axios.get('getnew/'+id)
+              .then( res => {
+               this.newsDetail = res.data.message[id-1]
+              })
+             .catch( err => console.log(err))
+             }
+                   
+                   
+  
 
 
   
