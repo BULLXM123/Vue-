@@ -8,7 +8,7 @@
         <div class="demo">
             <ul>
                 <li v-for="news in newsList" :key="news.id">
-                    <a href="#">
+                    <router-link :to="{name:'news.detail',query:{id:news.id}}">
                         <img class="" :src="news.img_url">
                         <div>
                             <span>{{news.title}}</span>
@@ -18,7 +18,7 @@
                                 
                             </div>
                         </div>
-                        </a>
+                        </router-link>
                         
                   </li>
                         <!-- <li class="line"></li> -->
