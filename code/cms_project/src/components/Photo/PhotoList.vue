@@ -50,7 +50,7 @@ export default {
         },
         methods: {
             loadImgsByCategoryId (categoryId) {
-            this.$axios.get('getimages/'+categoryId)
+            this.$axios.get('getimages/?categoryId='+categoryId)
             .then(res =>{
                 this.imgs = res.data.message;
                 console.log(this.imgs);
