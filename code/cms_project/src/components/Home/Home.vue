@@ -35,7 +35,7 @@ export default {
           name:'news.list'
         }},
         { className:'sharing',title:'图文分享',router:{
-          name:'news.list'
+          name:'photo.list',params:{categoryId:0}
         }},
         { className:'shopping',title:'商品展示',router:{
           name:'news.list'

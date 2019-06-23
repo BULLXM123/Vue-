@@ -6,6 +6,7 @@ import Search from '@/components/Search/Search'
 import Shopcart from '@/components/Shopcart/Shopcart'
 import NewsList from '@/components/News/NewsList'
 import NewsDatail from '@/components/News/NewsDetail'
+import PhotoList from '@/components/Photo/PhotoList'
 Vue.use(Router)
 /* eslint-disable no-new */
 export default new Router({
@@ -49,5 +50,10 @@ export default new Router({
       name: 'news.detail',
       component: NewsDatail
     },
+    {
+      path: '/photo/list/:categoryId',
+      name: 'photo.list',
+      component: PhotoList
+    }
   ]
 })
