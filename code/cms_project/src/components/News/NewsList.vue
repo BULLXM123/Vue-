@@ -24,6 +24,7 @@
                         <!-- <li class="line"></li> -->
             </ul>
         </div>
+        <my-patch />
     </div>
 </template>
 

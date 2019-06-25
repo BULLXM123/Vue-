@@ -10,6 +10,7 @@
             </div>
         </div>
         <div class="news-content" v-html="newsDetail.content"></div>
+        <my-patch />
     </div>
 </template>
 

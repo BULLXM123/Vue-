@@ -5,8 +5,9 @@ import Member from '@/components/Member/Member'
 import Search from '@/components/Search/Search'
 import Shopcart from '@/components/Shopcart/Shopcart'
 import NewsList from '@/components/News/NewsList'
-import NewsDatail from '@/components/News/NewsDetail'
+import NewsDetail from '@/components/News/NewsDetail'
 import PhotoList from '@/components/Photo/PhotoList'
+import PhotoDetail from '@/components/Photo/PhotoDetail'
 Vue.use(Router)
 /* eslint-disable no-new */
 export default new Router({
@@ -16,7 +17,6 @@ export default new Router({
       path:'/',
       //redirect:'/home',
       redirect:{  name:'home'}
-
     },
     {
       path: '/home',
@@ -48,12 +48,19 @@ export default new Router({
     {
       path: '/news/detail',
       name: 'news.detail',
-      component: NewsDatail
+      component: NewsDetail
     },
+    //图片列表
     {
       path: '/photo/list/:categoryId',
       name: 'photo.list',
       component: PhotoList
+    },
+    //图片详情
+    {
+      path:'/photo/detail/',
+      name:'photo.detail',
+      component:PhotoDetail
     }
   ]
 })
