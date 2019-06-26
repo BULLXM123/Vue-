@@ -108,7 +108,26 @@ __1.```useEslint: false```__ in __`config/index.js`__
              }
                    
                    
-  
+ ### 第七&八次提交说明：  
+ __1.新增图文列表模块PhotoList.vue__   
+ * 带字符串查询    
+ 
+                 let categoryId = this.$route.params.categoryId;
+                 this.$axios.get('getimages/?categoryId='+categoryId)  
+                 
+ __2.新增图文详情模块PhotoDetail.vue__  
+ * 带字符串查询  
+ 
+                 let id = this.$route.query.id;
+                 this.$axios.get('/getimagesInfo/?imgId='+id) 
+                 
+* 使用vue-preview插件查看缩略图  
+
+                 <vue-preview :slides="srcs"></vue-preview>
+ 
+    
+__3.修复各个模块中内容被导航条挡住的bug__  
+* 限定width/height并设置overflow-x/y:scroll
 
 
   
