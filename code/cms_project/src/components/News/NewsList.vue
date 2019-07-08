@@ -24,7 +24,6 @@
                         <!-- <li class="line"></li> -->
             </ul>
         </div>
-        <my-patch />
     </div>
 </template>
 
@@ -47,6 +46,10 @@ export default {
 </script>
 
 <style scoped>
+.tmp1{
+    height:516px;
+    overflow-y:scroll;
+}
 ul{
     padding:0px;
     margin:0px;

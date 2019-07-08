@@ -38,7 +38,7 @@ export default {
           name:'photo.list',params:{categoryId:0}
         }},
         { className:'shopping',title:'商品展示',router:{
-          name:'news.list'
+          name:'goods.list',query:{id:1}
         }},
         { className:'message',title:'留言反馈',router:{
           name:'news.list'

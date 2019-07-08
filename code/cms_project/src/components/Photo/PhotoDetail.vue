@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tmp1">
         <nav-bar title="图文详情"/>
         <div class="photo-title">
             <p>{{info.title}}</p>
@@ -17,6 +17,7 @@
             <p v-html="info.content"></p>
         </div>
         <my-patch />
+        <comment :cid="$router.query.id"/>
     </div>
 </template>
 
@@ -52,6 +53,10 @@ export default {
 </script>
  
 <style>
+.tmp1{
+    height:516px;
+    overflow-y:scroll;
+}
 li{
     list-style: none;
 }

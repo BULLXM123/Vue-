@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tmp1">
         <nav-bar title="图文列表"/>
         <div class="photo-header">
             <ul>
@@ -23,7 +23,7 @@
                 </li>
             </ul>
         </div>
-        <my-patch />
+      
     </div>
 </template>
 
@@ -73,6 +73,10 @@ export default {
 </script>
 
 <style>
+.tmp1{
+    height:516px;
+    overflow-y:scroll;
+}
 .photo-header{
             width:320px;
             height:50px;

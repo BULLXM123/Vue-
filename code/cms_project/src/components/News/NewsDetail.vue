@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+.tmp1{
+    height:516px;
+    overflow-y:scroll;
+}
 .news-title p{
     color:#0a87f8;
     font-size:20px; 
