@@ -1,7 +1,7 @@
 <template>
     <div class="tmp1">
         <nav-bar title="图文详情"/>
-        <div class="photo-title">
+        <div class="photo-title" v-if="info">
             <p>{{info.title}}</p>
             <span>发起日期：{{info.add_time | convertTime('YYYY-MM-DD')}}</span>
             <span>{{info.click}}次浏览</span><br>
@@ -17,7 +17,7 @@
             <p v-html="info.content"></p>
         </div>
         <my-patch />
-        <comment :cid="$router.query.id"/>
+        <comment :cid="this.id"/>
     </div>
 </template>
 
@@ -26,13 +26,14 @@ export default {
     data(){
         return {
             info : {},
-            srcs: []
+            srcs: [],
+            id:1   
         }
     },
     created(){
-        let id = this.$route.query.id;
-        console.log(id);
-        this.$axios.get('/getimagesInfo/?imgId='+id)
+        this.id = this.$route.query.id;
+        console.log(this.id);
+        this.$axios.get('/getimagesInfo/?imgId='+this.id)
         .then(res=>{
             this.info = res.data.message[0];
         })

@@ -32,11 +32,14 @@
       return {
         goodsList:[],
         page:1,
-        isAllLoaded:false
+        isAllLoaded:false,
+        id:'',
+    
       }
     },
     created(){
         this.page = this.$route.query.id || "1";
+        console.log(this.page);
         this.loadByPage (this.page);
     },
     methods: {
@@ -51,24 +54,27 @@
      },
 
         concatByPage(page){
-          this.$axios.get('getgoods?pageindex='+page)
+        this.$axios.get('getgoods?pageindex='+page)
         .then(res=>{
-            if(res.data.message=='undefined'){
+            console.log(res.data.message);
+            if(res.data.message===null||'undefined'){
                 this.isAllLoaded = true;
                       this.$toast({
                       message:"没有更多数据了！"
                 });
+                return;
             }
             this.goodsList =this.goodsList.concat(res.data.message);
              this.$refs.loadmore.onBottomLoaded();
             this.page++;
-            console.log(res.data.message);
+            
         })
         .catch(err=>console.log(err,"商品获取失败"))
      },
       loadBottom(){
           console.log('上拉加载');
           this.concatByPage(this.page);
+          console.log(this.page);
           
       },
       
