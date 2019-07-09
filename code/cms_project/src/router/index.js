@@ -9,6 +9,7 @@ import NewsDetail from '@/components/News/NewsDetail'
 import PhotoList from '@/components/Photo/PhotoList'
 import PhotoDetail from '@/components/Photo/PhotoDetail'
 import GoodsList from '@/components/Goods/GoodsList'
+import GoodsDetail from '@/components/Goods/GoodDetail'
 Vue.use(Router)
 /* eslint-disable no-new */
 export default new Router({
@@ -67,7 +68,16 @@ export default new Router({
     {
       name:'goods.list',
       path:'goods/list',
-      component:GoodsList
+      component:GoodsList,
+      meta: {
+        keepAlive: true // 需要被缓存
+      }
+    },
+    //商品详情
+    {
+      name:'goods.detail',
+      path:'goods/detail/:id',
+      component:GoodsDetail
     }
   ]
 })

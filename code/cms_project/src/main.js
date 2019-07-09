@@ -15,8 +15,7 @@ import Comment from '@/components/Common/Comment'
 // 引入css
 import 'mint-ui/lib/style.css'
 import './assets/css/global.css'
-import Honor from '../build/5c.jpg'
-Vue.use(Honor);
+
 // 安装插件 注册全局组件以及挂载属性
 Axios.defaults.baseURL = ' https://www.easy-mock.com/mock/5d06e3dbef47aa08b2da1201/vue'
 // Axios.defaults.baseURL = 'https://www.doutula.com/api/'
@@ -41,6 +40,8 @@ Vue.component(MyLi.name,MyLi)
 Vue.component(NavBar.name,NavBar)
 Vue.component(Mypatch.name,Mypatch)
 Vue.component(Comment.name,Comment)
+import Swipe from '@/components/Common/Swipe'
+Vue.component(Swipe.name,Swipe)
 //定义moment全局日期过滤器
 import Moment from 'moment';
 Moment.locale('zh-cn');

@@ -13,7 +13,7 @@
   </mt-tab-item>
   <mt-tab-item id="shopcart">
     <img @click="changeHash" slot="icon" src="./assets/img/shoppingcart.png">
-    购物车
+    购物车<mt-badge type="error" size="small">{{shownum}}</mt-badge>
   </mt-tab-item>
   <mt-tab-item id="search">
     <img @click="changeHash" slot="icon" src="./assets/img/search.png">
@@ -24,13 +24,20 @@
 </template>
 /* eslint-disable no-new */
 <script>
+import EventBus from './EventBus';
 export default {
   name: 'app',
   data () {
     return {
-      selected: ''
+      selected: '',
+      shownum:0
     }
   }, 
+  created(){
+    EventBus.$on('addShopcart',data=>{ //=>为外层的数据
+      this.shownum+=data;
+    })
+  },
   methods:{
     changeHash() {
       
@@ -50,11 +57,11 @@ export default {
 }
 </script>
 
-<style>
-  .mint-header{
+<style scoped>
+.mint-header{
   position: relative;
 }
 .mt-tabbar{
-  top:40px
+  top:40px;
 }
 </style>

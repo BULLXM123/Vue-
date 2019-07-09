@@ -20,7 +20,7 @@ export default {
 <style scoped>
     .cms_s_header {
         /* display: inline-block; */
-        margin-top:40px;
+        /* margin-top:0px; */
         /* height: 40px; */
         background-color: #f7f7f7;
     }

@@ -5,7 +5,7 @@
     :bottom-all-loaded="isAllLoaded"> 
     <ul>
         <li v-for="goods in goodsList" :key="goods.id">
-            <a href="#">
+            <router-link :to="{name:'goods.detail',params:{id:goods.id}}">
                 <img :src="goods.img_url">
                 <div class="title">{{goods.title}}</div>
                 <div class="desc">
@@ -18,7 +18,7 @@
                         <div class="count">剩{{goods.stock}}件</div>
                     </div>
                 </div>
-            </a>
+            </router-link>
         </li>
     
     </ul>
@@ -41,6 +41,7 @@
         this.page = this.$route.query.id || "1";
         console.log(this.page);
         this.loadByPage (this.page);
+        
     },
     methods: {
         loadByPage(page){

@@ -1,12 +1,13 @@
 <template>
     <div>
         <!-- 轮播 九宫格 -->
-        <mt-swipe :auto="4000">
-            <!-- v-for组件,要给key -->
-          <mt-swipe-item v-for="(img,index) in imgs" :key="index"> 
+        <!-- <mt-swipe :auto="4000">
+           
+          <mt-swipe-item v-for="(img,index) in imgs" :key="index">  
             <img :src="img.image_url" :style="mystyle">
           </mt-swipe-item>
-        </mt-swipe>
+        </mt-swipe> -->
+        <my-swipe url="example"/>
         <div class="grid">
           <my-ul>
             <my-li v-for="(grid,index) in grids" :key="index">
@@ -27,9 +28,9 @@ export default {
   data () {
     return {
       imgs: [],
-      mystyle: {
-        width:"320px"
-      },
+      // mystyle: {
+      //   width:"320px"
+      // },
       grids:[
         { className:'news',title:'新闻资讯',router:{
           name:'news.list'
@@ -61,14 +62,15 @@ export default {
   //     })
   //     .catch(err=> console.log('轮播图获取异常', err));
   // }
-  created() {
-      this.$axios.get('/example')
-      .then(res=>{
-          this.imgs = res.data.data.list; 
-          console.log(res.data.data.list); //被坑到了 要写两个.data 一开始只写了一个.data!!!
-      })
-      .catch(err=> console.log('轮播图获取异常', err));
-  }
+  
+  // created() {
+  //     this.$axios.get('/example')
+  //     .then(res=>{
+  //         this.imgs = res.data.data.list; 
+  //         console.log(res.data.data.list); //被坑到了 要写两个.data 一开始只写了一个.data!!!
+  //     })
+  //     .catch(err=> console.log('轮播图获取异常', err));
+  // }
 }
 </script>
 <style scoped>
