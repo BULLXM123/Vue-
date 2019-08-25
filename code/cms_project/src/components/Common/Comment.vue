@@ -54,7 +54,7 @@ export default {
             this.msgs = res.data.message;
             this.page++;
         })
-        .catch(console.log('评论获取失败'),err);
+        .catch(err=>console.log('评论获取失败'));
         },
         loadMore(){
             this.$axios.get(`getcomments/${this.cid}?pageindex=${this.page}`)
@@ -62,7 +62,7 @@ export default {
             this.msgs = this.msgs.concat(res.data.message);
             this.page++;
         })
-        .catch(err,console.log('评论获取失败'));
+        .catch(err=>console.log('评论获取失败'));
         } ,
         sendMsg(){
 
