@@ -1,4 +1,8 @@
-# Vue-
+# Vue-  
+
+ ### 演示：  
+ ![image](https://github.com/BULLXM123/Vue-/blob/master/github.gif)  
+ 
  ### 使用说明：
   * 1.安装nodejs并配置好环境变量
   * 2.在cms_project文件夹下打开cmd界面
