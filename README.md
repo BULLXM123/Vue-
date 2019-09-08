@@ -1,7 +1,7 @@
 # Vue-  
 
  ### 演示：  
- ![image](https://github.com/BULLXM123/Vue-/blob/master/GIF.gif)  
+ ![image](https://raw.githubusercontent.com/BULLXM123/Vue-/master/GIF.gif)  
  
  ### 使用说明：
   * 1.安装nodejs并配置好环境变量
